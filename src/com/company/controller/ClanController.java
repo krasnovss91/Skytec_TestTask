@@ -11,7 +11,15 @@ public class ClanController {
         clan.setGold(newGold);
 
         clan.incGold(gold);
+        ClanManager.saveClan(clanId);
     }
 
+   public void decGold(long clanId, int gold){//метод для уменьшения количества золота
+      Clan clan = ClanManager.getClan(clanId);
+      int newGold = clan.getGold() - gold;
+      clan.setGold(newGold);
 
+      clan.decGold(gold);
+      ClanManager.saveClan(clanId);
+   }
 }
