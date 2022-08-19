@@ -13,11 +13,10 @@ public class Tracker {
         this.sessionFactory = sessionFactory;
     }
 
-    public static void trackerClanGold(long clanId, String name, int gold) throws HibernateException, SystemException {//здесь сохранение трекера в базу
+    public static void trackerClanGold(Clan clan) throws HibernateException, SystemException {//здесь сохранение трекера в базу
         Session session = sessionFactory.openSession();
         Transaction transaction = (Transaction) session.beginTransaction();
 
-        Clan clan = new Clan(clanId, name, gold);
         try {
             session.save(clan);
             transaction.commit();
