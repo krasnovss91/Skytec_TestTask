@@ -2,9 +2,12 @@ package com.company.entity;
 
 public class Clan {//сущность
 
+
+
     private long id;
     private String name;
     private int gold;
+
 
     public long getId() {
         return id;
@@ -27,6 +30,12 @@ public class Clan {//сущность
     }
 
     public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public Clan(long id, String name, int gold) {
+        this.id = id;
+        this.name = name;
         this.gold = gold;
     }
 
