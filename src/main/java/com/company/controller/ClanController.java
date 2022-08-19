@@ -11,6 +11,7 @@ public class ClanController {
         clan.setGold(newGold);
 
         clan.incGold(gold);
+        //здесь вызвать трекер для сохранения в базу
         ClanManager.saveClan(clanId);
     }
 
@@ -20,6 +21,7 @@ public class ClanController {
       clan.setGold(newGold);
 
       clan.decGold(gold);
+      //и здесь
       ClanManager.saveClan(clanId);
    }
 }
